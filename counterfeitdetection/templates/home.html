@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="padding: 20px; margin-top:150px; text-align: center;">
+    <form action="{% url 'detector:predictFake'%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label>Upload Image Here</label></td>
+                <td><input name="filePath" type="file"></td>
+                <td><input type="submit" value="Predict" style="margin: 30px;"></td>
+                {% if predictedLabel != null %}
+                {% if predictedLabel == '0' %}
+                <td style= "background-color: lightcoral;">This is a Fake Product. <br> Probability of being fake is {{ predictedProb|stringformat:".3f" }} </td>
+                {% else %}
+                <td style= "background-color: lightgreen;">This is an Original Product. <br> Probability of being original is {{ predictedProb|stringformat:".3f" }} </td>
+                {% endif %}
+                <td><img src={{ filePathName }}></td>
+                {% endif %}
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

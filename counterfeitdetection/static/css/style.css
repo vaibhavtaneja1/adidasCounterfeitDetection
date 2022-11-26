@@ -1,0 +1,37 @@
+body{
+    background: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background: lightseagreen;
+    color: whitesmoke;
+    margin-top: 0;
+    padding: 10px;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+footer{
+    background: lightseagreen;
+    color: whitesmoke;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#tablestyle{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+tr, th, td{
+    padding: 10px;
+    border: 1px solid black; 
+    border-collapse: collapse;
+    }
